@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PageSwitch"
+             xmlns:local="clr-namespace:BatterySync"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800" Background="#FF21495F">
     <Grid>
 
-        <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}">
+        <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto" Focusable="False">
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto">
                         <Grid Height="60" Width="auto" Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="210"/>

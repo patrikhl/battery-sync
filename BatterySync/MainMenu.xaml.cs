@@ -28,6 +28,7 @@ namespace BatterySync
             List<Battery> batteries = new List<Battery>();
             batteries.Add(new Battery() { percentage = 20, syncStatus = 1 , chargeTime = 15});
             batteries.Add(new Battery() { percentage = 100, syncStatus = 1 , chargeTime = 0});
+
             batteryList.ItemsSource = batteries;
         }
 

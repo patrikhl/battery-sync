@@ -59,22 +59,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Battery.cs" />
-    <Compile Include="BatteryMenu2.xaml.cs">
-      <DependentUpon>BatteryMenu2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="BatteryMenu1.xaml.cs">
-      <DependentUpon>BatteryMenu1.xaml</DependentUpon>
+    <Compile Include="BatteryMenu.xaml.cs">
+      <DependentUpon>BatteryMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="ISwitchable.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
-    <Page Include="BatteryMenu2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="BatteryMenu1.xaml">
+    <Page Include="BatteryMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

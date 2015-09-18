@@ -18,9 +18,9 @@ namespace BatterySync
     /// <summary>
     /// Interaction logic for BatteryMenu1.xaml
     /// </summary>
-    public partial class BatteryMenu1 : UserControl
+    public partial class BatteryMenu : UserControl
     {
-        public BatteryMenu1()
+        public BatteryMenu()
         {
             InitializeComponent();
         }

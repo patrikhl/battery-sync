@@ -29,8 +29,6 @@ namespace BatterySync
             batteries.Add(new Battery() { percentage = 20, syncStatus = 1 , chargeTime = 15});
             batteries.Add(new Battery() { percentage = 100, syncStatus = 1 , chargeTime = 0});
             batteryList.ItemsSource = batteries;
-
-
         }
 
         public void UtilizeState(object state)
@@ -40,17 +38,12 @@ namespace BatterySync
 
         private void Battery1MenuBtn_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new BatteryMenu1());
-        }
-
-        private void Battery2MenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new BatteryMenu2());
+            Switcher.Switch(new BatteryMenu());
         }
 
         private void Battery_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new BatteryMenu1());
+            Switcher.Switch(new BatteryMenu());
         }
     }
 }

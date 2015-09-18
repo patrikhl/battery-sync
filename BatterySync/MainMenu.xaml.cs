@@ -22,14 +22,17 @@ namespace BatterySync
     /// </summary>
     public partial class MainMenu : UserControl
     {
+        List<Battery> batteries;
+
         public MainMenu()
         {
             InitializeComponent();
-            List<Battery> batteries = new List<Battery>();
+            // initialize battery list
+            batteries = new List<Battery>();
+            batteryList.ItemsSource = batteries;
+            // add to batteries for testing
             batteries.Add(new Battery() { percentage = 20, syncStatus = 1 , chargeTime = 15});
             batteries.Add(new Battery() { percentage = 100, syncStatus = 1 , chargeTime = 0});
-
-            batteryList.ItemsSource = batteries;
         }
 
         public void UtilizeState(object state)
@@ -37,14 +40,10 @@ namespace BatterySync
             throw new NotImplementedException();
         }
 
-        private void Battery1MenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new BatteryMenu());
-        }
-
         private void Battery_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new BatteryMenu());
+            Battery b = ((Button)sender).DataContext as Battery;
+            Switcher.Switch(new BatteryMenu(b));
         }
     }
 }

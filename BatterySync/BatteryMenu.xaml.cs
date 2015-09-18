@@ -16,12 +16,16 @@ using System.Windows.Shapes;
 namespace BatterySync
 {
     /// <summary>
-    /// Interaction logic for BatteryMenu1.xaml
+    /// Interaction logic for BatteryMenu.xaml
     /// </summary>
     public partial class BatteryMenu : UserControl
     {
-        public BatteryMenu()
+        Battery battery;
+
+        public BatteryMenu(Battery b)
         {
+            battery = b;
+            this.DataContext = battery;
             InitializeComponent();
         }
 

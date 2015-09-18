@@ -11,7 +11,7 @@
         <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto">
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto" >
                         <Grid Height="60" Width="auto" Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="210"/>

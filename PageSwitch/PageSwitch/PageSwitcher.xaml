@@ -1,4 +1,4 @@
-﻿<Window x:Class="PageSwitch.PageSwitcher"
+﻿<Window x:Class="BatterySync.PageSwitcher"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="WPF Page Switch" Height="600" Width="800" ResizeMode="NoResize" Background="#FF21495F">

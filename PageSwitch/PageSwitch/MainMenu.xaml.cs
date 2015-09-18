@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Ink;
 
 
-namespace PageSwitch
+namespace BatterySync
 {
     /// <summary>
     /// Interaction logic for MainMenu.xaml

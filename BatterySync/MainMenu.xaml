@@ -13,16 +13,17 @@
                     <Button Style="{StaticResource batteryButton}" Click="Battery_Click">
                         <Grid Height="60" Width="auto" Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="150"/>
                                 <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="30"/>
+                                
                             </Grid.ColumnDefinitions>
 
-                            <ProgressBar Minimum="0" Maximum="100" Value="{Binding percentage}" Margin ="10,0,10,0"/>
-                            <TextBlock Grid.Column="1" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
-                            <TextBlock Grid.Column="2" Style="{StaticResource chargeText}"/>
-                            <Ellipse Grid.Column="3" Style="{StaticResource syncIndicator}" Width="10" Height="10"/>
+                            <ProgressBar  Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding percentage}" Margin ="10,0,10,0"/>
+                            <TextBlock Grid.Column="2" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
+                            <TextBlock Grid.Column="3" Style="{StaticResource chargeText}"/>
+                            <Ellipse Grid.Column="0" Style="{StaticResource syncIndicator}" Width="10" Height="10"/>
                         </Grid>
                     </Button>
                 </DataTemplate>

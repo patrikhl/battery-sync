@@ -1,5 +1,6 @@
 ﻿<Window x:Class="BatterySync.PageSwitcher"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Danish Aviation Systems: Battery Monitoring System" Height="600" Width="800" ResizeMode="NoResize" Background="#FF21495F">
+    Title="Danish Aviation Systems: Battery Monitoring System" Height="600" Width="800" ResizeMode="NoResize" Background="#FF21495F"
+    Icon="das_logo_small.ico">
 </Window>

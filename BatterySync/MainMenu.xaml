@@ -7,23 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800" Background="#FF21495F">
     <Grid>
-
-        <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}">
+        <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto" >
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto" HorizontalAlignment="Stretch">
                         <Grid Height="60" Width="auto" Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="210"/>
+                                <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="275"/>
-                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="30"/>
                             </Grid.ColumnDefinitions>
 
                             <ProgressBar Minimum="0" Maximum="100" Value="{Binding percentage}" Margin ="10,0,10,0"/>
                             <TextBlock Grid.Column="1" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
-                            <TextBlock Grid.Column="2" Text="{Binding chargeTime, StringFormat='{}{0} min until fully charged'}" FontSize="20" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="5,0,10,0"/>
-                            <Ellipse Grid.Column="3" Fill="#FF06B025" Width="10" Height="10" VerticalAlignment ="Center" HorizontalAlignment="Right" Margin ="20,0,10,0" />
+                            <TextBlock Style="{StaticResource chargeText}" Grid.Column="2"/>
+                            <Ellipse Grid.Column="3" Fill="#FF06B025" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Grid>
                     </Button>
                 </DataTemplate>

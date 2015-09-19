@@ -12,8 +12,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Name="Border" CornerRadius="2" BorderThickness="1"
-                    BorderBrush="#FF21495F">
+                        <Border Name="Border" CornerRadius="2" BorderThickness="1" BorderBrush="#FF21495F">
                             <ContentPresenter Margin="2" 
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center" 
@@ -21,13 +20,29 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="Border" 
-                          Property="Background" Value="#FF21495F" />
+                                <Setter TargetName="Border" Property="Background" Value="#FF21495F" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="chargeText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Open-sans"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding isFullyCharged}" Value="False">
+                    <Setter Property="Text" Value="{Binding chargeTime, StringFormat='{}{0} min until fully charged'}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding isFullyCharged}" Value="True">
+                    <Setter Property="Text" Value="Fully charged"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

@@ -31,9 +31,9 @@ namespace BatterySync
             batteries = new List<Battery>();
             batteryList.ItemsSource = batteries;
             // add to batteries for testing
-            batteries.Add(new Battery { percentage = 20, chargeTime = 15, isFullyCharged = false, syncStatus = 0 });
-            batteries.Add(new Battery { percentage = 100, chargeTime = 0, isFullyCharged = true, syncStatus = 2 });
-            batteries.Add(new Battery { percentage = 73, chargeTime = 33, isFullyCharged = false, syncStatus = 1 });
+            batteries.Add(new Battery { percentage = 20, chargeTime = 15, isFullyCharged = false, syncStatus = 0, health = 2, id = "1234ABCD" });
+            batteries.Add(new Battery { percentage = 100, chargeTime = 0, isFullyCharged = true, syncStatus = 2, health = 0, id = "8273LSKD" });
+            batteries.Add(new Battery { percentage = 73, chargeTime = 33, isFullyCharged = false, syncStatus = 1, health = 1, id = "9203USHF" });
             //batteries.Add(new Battery(20, 15, false, 0));
             //batteries.Add(new Battery(100, 0, true, 1));
         }

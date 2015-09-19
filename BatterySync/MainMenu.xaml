@@ -10,7 +10,7 @@
         <ListBox x:Name="batteryList" Height="580" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="auto" Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="Battery_Click" Width="auto" HorizontalAlignment="Stretch">
+                    <Button Style="{StaticResource batteryButton}" Click="Battery_Click">
                         <Grid Height="60" Width="auto" Margin="0,30,0,30">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>

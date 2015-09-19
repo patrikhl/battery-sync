@@ -20,5 +20,7 @@ namespace BatterySync
         public int chargeTime { get; set; }
         public bool isFullyCharged { get; set; }
         public int syncStatus { get; set; }
+        public int health { get; set; }
+        public string id { get; set; }
     }
 }

@@ -4,11 +4,12 @@
              xmlns:local="clr-namespace:PageSwitch"
              StartupUri="PageSwitcher.xaml">
     <Application.Resources>
-        <Style TargetType="{x:Type Button}">
+        <Style x:Key="batteryButton" TargetType="Button">
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="auto"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="MinHeight" Value="23"/>
-            <Setter Property="MinWidth" Value="75"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -20,13 +21,105 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="#FF21495F" />
+                                <Setter TargetName="Border" Property="Background" Value="{x:Null}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--
+        <Style x:Key="syncButton" TargetType="Button">
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="62,0,0,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Open-sans"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="Height" Value="auto"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding syncStatus}" Value="0">
+                    <Setter Property="Content" Value="Data is synchronized"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="1">
+                    <Setter Property="Content" Value="Synchronizing data"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="2">
+                    <Setter Property="Content" Value="Could not synchronize data. Press to try again"/>
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="BorderBrush" Value="{x:Null}"/>
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        -->
+
+        <!--
+        <ControlTemplate x:Key="syncButton" TargetType="{x:Type Button}">
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" 
+             FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="White" FontFamily="Open-sans"
+             Width="auto" Height="auto" x:Name="Button">
+                <ContentPresenter />
+            </Button>
+            <ControlTemplate.Triggers>
+                <DataTrigger Binding="{Binding syncStatus}" Value="0">
+                    <Setter Property="Content" Value="Data is synchronized"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="1">
+                    <Setter Property="Content" Value="Synchronizing data"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="2">
+                    <Setter Property="Content" Value="Could not synchronize data. Press to try again"/>
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="Button" Property="Background" Value="{x:Null}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        -->
+
+        <ControlTemplate x:Key="syncButton" TargetType="{x:Type Button}">
+            <Border Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" 
+             VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0"
+             Width="auto" Height="auto" x:Name="Border">
+                <ContentPresenter />
+            </Border>
+            <ControlTemplate.Triggers>
+                <DataTrigger Binding="{Binding syncStatus}" Value="0">
+                    <Setter Property="Content" Value="Data is synchronized"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="1">
+                    <Setter Property="Content" Value="Synchronizing data"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding syncStatus}" Value="2">
+                    <Setter Property="Content" Value="Could not synchronize data. Press to try again"/>
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="Border" Property="Background" Value="{x:Null}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="Border" Property="Background" Value="Black" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
 
         <Style x:Key="chargeText" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"/>
@@ -45,6 +138,26 @@
             </Style.Triggers>
         </Style>
 
+        <Style x:Key="batteryHealth" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="62,0,0,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Open-sans"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding health}" Value="0">
+                    <Setter Property="Text" Value="Battery health: Good"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding health}" Value="1">
+                    <Setter Property="Text" Value="Battery health: Bad"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding health}" Value="2">
+                    <Setter Property="Text" Value="Battery health: Critical"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="syncIndicator" TargetType="Ellipse">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -56,7 +169,7 @@
                     <Setter Property="ToolTip" Value="Data is synchronized"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding syncStatus}" Value="1">
-                    <Setter Property="Fill" Value="Yellow"/>
+                    <Setter Property="Fill" Value="#FF00B9FF"/>
                     <Setter Property="ToolTip" Value="Synchronizing data"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding syncStatus}" Value="2">
@@ -64,6 +177,16 @@
                     <Setter Property="ToolTip" Value="Could not synchronize data"/>
                 </DataTrigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="idText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Open-sans"/>
+            <Setter Property="Text" Value="{Binding id, StringFormat='Battery ID: {0}'}"/>
+            <Setter Property="Margin" Value="62,0,0,0"/>
         </Style>
     </Application.Resources>
 </Application>

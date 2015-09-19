@@ -27,7 +27,7 @@
             <ProgressBar Minimum="0" Maximum="100" Value="{Binding percentage}" Margin ="10,0,10,0"/>
             <TextBlock Grid.Column="1" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
             <TextBlock Grid.Column="2" Style="{StaticResource chargeText}"/>
-            <Ellipse Grid.Column="3" Fill="#FF06B025" Width="10" Height="10" VerticalAlignment ="Center" HorizontalAlignment="Center"/>
+            <Ellipse Grid.Column="3" Style="{StaticResource syncIndicator}"/>
         </Grid>
     </Grid>
 </UserControl>

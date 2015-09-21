@@ -7,12 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <!--<Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Click="Back_Click"/>-->
-        <Button x:Name="back" Click="Back_Click">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="back" Click="Back_Click" Grid.RowSpan="4">
             <Button.Template>
                 <ControlTemplate>
+<<<<<<< HEAD
                     <Border x:Name="backBtn_border" Width="29" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,11,0,0" CornerRadius="4,4,4,4">
                         <Image Source="back_btn.PNG" Width="25" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+=======
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,67,0,0">
+                        <Image Source="back_btn.PNG" Width="25" Height="20"/>
+>>>>>>> f5a76d95da4e56925343f5ac697731d9212a5c0d
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -26,18 +36,22 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Grid x:Name="InfoGrid" Height="60" Width="auto" Margin="30,47,30,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid x:Name="InfoGrid" Height="60" Width="auto" Margin="52,47,52,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="210"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="275"/>
-                <ColumnDefinition Width="65"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
 
             <ProgressBar Minimum="0" Maximum="100" Value="{Binding percentage}" Margin ="10,0,10,0"/>
-            <TextBlock Grid.Column="1" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
-            <TextBlock Grid.Column="2" Text="{Binding chargeTime, StringFormat='{}{0} min until fully charged'}" FontSize="20" VerticalAlignment ="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="5,0,10,0"/>
-            <Ellipse Grid.Column="3" Fill="#FF06B025" Width="10" Height="10" VerticalAlignment ="Center" HorizontalAlignment="Right" Margin ="20,0,10,0" />
+            <TextBlock Grid.Column="1" Text="{Binding percentage, StringFormat='{}{0}%'}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="Opens-sans" Margin ="10,0,10,0"/>
+            <TextBlock Grid.Column="2" Style="{StaticResource chargeText}"/>
+            <Ellipse Grid.Column="3" Style="{StaticResource syncIndicator}"/>
         </Grid>
+
+        <Button Grid.Row="1" Template="{StaticResource syncButton}" Click="Sync_Click" FontSize="30" Foreground="White" FontFamily="Open-sans" Padding="10"/>
+        <TextBlock Grid.Row="2" Style="{StaticResource batteryHealth}"/>
+        <TextBlock Grid.Row="3" Style="{StaticResource idText}"/>
     </Grid>
 </UserControl>

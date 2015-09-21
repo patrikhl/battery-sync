@@ -38,5 +38,10 @@ namespace BatterySync
         {
             Switcher.Switch(new MainMenu());
         }
+
+        private void Sync_Click(object sender, RoutedEventArgs e)
+        {
+            battery.syncStatus = 0;
+        }
     }
 }

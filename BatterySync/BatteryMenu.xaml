@@ -13,7 +13,7 @@
             <RowDefinition Height="200*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="back" Click="Back_Click" Grid.RowSpan="4">
+        <Button x:Name="back" Click="Back_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Border x:Name="backBtn_border" Width="29" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,11,0,0" CornerRadius="4,4,4,4">

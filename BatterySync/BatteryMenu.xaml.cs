@@ -22,7 +22,7 @@ namespace BatterySync
     {
         Battery battery;
 
-        public BatteryMenu(Battery b)
+        public BatteryMenu(ref Battery b)
         {
             battery = b;
             this.DataContext = battery;
@@ -41,7 +41,10 @@ namespace BatterySync
 
         private void Sync_Click(object sender, RoutedEventArgs e)
         {
+            // set sync status to data syncronized
             battery.syncStatus = 0;
+            // reload page
+            Switcher.Switch(new BatteryMenu(ref battery));
         }
     }
 }

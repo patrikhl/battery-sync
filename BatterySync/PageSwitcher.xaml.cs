@@ -20,9 +20,18 @@ namespace BatterySync
     /// </summary>
     public partial class PageSwitcher : Window
     {
+        public List<Battery> batteries;
+
         public PageSwitcher()
         {
             InitializeComponent();
+            // initialize battery list
+            batteries = new List<Battery>();
+            // add batteries for testing
+            batteries.Add(new Battery { percentage = 20, chargeTime = 15, isFullyCharged = false, syncStatus = 0, health = 2, id = "1234ABCD" });
+            batteries.Add(new Battery { percentage = 100, chargeTime = 0, isFullyCharged = true, syncStatus = 2, health = 0, id = "8273LSKD" });
+            batteries.Add(new Battery { percentage = 73, chargeTime = 33, isFullyCharged = false, syncStatus = 1, health = 1, id = "9203USHF" });
+            // set pageSwitcher and switch to main menu
             Switcher.pageSwitcher = this;
             Switcher.Switch(new MainMenu());
         }

@@ -8,7 +8,6 @@ using System.Windows.Controls;
 
 namespace BatterySync
 {
-
         public static class Switcher
         {
             public static PageSwitcher pageSwitcher;
@@ -23,5 +22,4 @@ namespace BatterySync
                 pageSwitcher.Navigate(newPage, state);
             }
         }
-
 }

@@ -16,13 +16,8 @@
         <Button x:Name="back" Click="Back_Click" Grid.RowSpan="4">
             <Button.Template>
                 <ControlTemplate>
-<<<<<<< HEAD
                     <Border x:Name="backBtn_border" Width="29" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,11,0,0" CornerRadius="4,4,4,4">
                         <Image Source="back_btn.PNG" Width="25" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-=======
-                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,67,0,0">
-                        <Image Source="back_btn.PNG" Width="25" Height="20"/>
->>>>>>> f5a76d95da4e56925343f5ac697731d9212a5c0d
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

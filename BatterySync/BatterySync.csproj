@@ -81,6 +81,7 @@
     <Compile Include="BatteryMenu.xaml.cs">
       <DependentUpon>BatteryMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InternetChecker.cs" />
     <Compile Include="ISwitchable.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>

@@ -127,7 +127,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="Open-sans"/>
-            <Style.Triggers>
+<!--        <Style.Triggers>
                 <DataTrigger Binding="{Binding isFullyCharged}" Value="False">
                     <Setter Property="Text" Value="{Binding chargeTime, StringFormat='{}{0} min until fully charged'}"/>
                 </DataTrigger>
@@ -135,8 +135,8 @@
                 <DataTrigger Binding="{Binding isFullyCharged}" Value="True">
                     <Setter Property="Text" Value="Fully charged"/>
                 </DataTrigger>
-            </Style.Triggers>
-        </Style>
+            </Style.Triggers> -->
+        </Style> 
 
         <Style x:Key="batteryHealth" TargetType="TextBlock">
             <Setter Property="FontSize" Value="30"/>

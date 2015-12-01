@@ -5,21 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using LibUsbDotNet;
+using LibUsbDotNet.Main;
+using LibUsbDotNet.DeviceNotify;
 
 namespace BatterySync
 {
-        public static class Switcher
+    public static class Switcher
+    {
+        public static PageSwitcher pageSwitcher;
+
+        public static void Switch(UserControl newPage)
         {
-            public static PageSwitcher pageSwitcher;
-
-            public static void Switch(UserControl newPage)
-            {
-                pageSwitcher.Navigate(newPage);
-            }
-
-            public static void Switch(UserControl newPage, object state)
-            {
-                pageSwitcher.Navigate(newPage, state);
-            }
+            pageSwitcher.Navigate(newPage);
         }
+
+        public static void Switch(UserControl newPage, object state)
+        {
+            pageSwitcher.Navigate(newPage, state);
+        }    
+    }
 }

@@ -25,7 +25,7 @@ namespace BatterySync
         public MainMenu()
         {
             InitializeComponent();
-            batteryList.ItemsSource = Switcher.pageSwitcher.batteries;
+            batteryList.ItemsSource = Switcher.pageSwitcher.batteries.Values;
         }
 
         public void UtilizeState(object state)

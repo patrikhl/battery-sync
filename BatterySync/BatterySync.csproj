@@ -57,6 +57,9 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>..\..\..\..\..\Program Files\LibUsbDotNet\LibUsbDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -78,6 +81,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Battery.cs" />
+    <Compile Include="BatteryBinaryReader.cs" />
     <Compile Include="BatteryMenu.xaml.cs">
       <DependentUpon>BatteryMenu.xaml</DependentUpon>
     </Compile>
